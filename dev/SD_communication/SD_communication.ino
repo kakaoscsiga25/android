@@ -7,7 +7,6 @@
  ** MOSI - pin 11
  ** MISO - pin 12
  ** CLK - pin 13
- ** CS - pin 4
 
  created   Nov 2010
  by David A. Mellis
@@ -21,6 +20,8 @@
 #include <SPI.h>
 #include <SD.h>
 
+const int SD_CS_PIN = 9;
+
 File myFile;
 
 void setup() {
@@ -33,7 +34,8 @@ void setup() {
 
   Serial.print("Initializing SD card...");
 
-  if (!SD.begin(4)) {
+  //if (!SD.begin(4)) {
+  if (!SD.begin(SD_CS_PIN)) {
     Serial.println("initialization failed!");
     return;
   }

@@ -20,7 +20,7 @@
 #include <SPI.h>
 #include <SD.h>
 
-const int SD_CS_PIN = 9;
+const int SD_CS_PIN = 10;
 
 File myFile;
 
